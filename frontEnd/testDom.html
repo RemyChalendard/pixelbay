@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +10,19 @@
 
 <body>
     <main>
-        <h1>Test</h1>
-        <p>Bonjour</p>
-        <p>Bonjour</p>
-        <p>Bonjour</p>
+        <article>
+            <h1 id="aaa">Test</h1>
+            <p>Bonjour</p>
+            <p>Bonjour</p>
+            <p>Bonjour</p>
+        </article>
     </main>
 
-// Le script en dernier //
     <script>
-        console.log("Salut tout le monde !")
-        let elements = getElementsByTagName("p")
+        let element = document.getElementById("aaa")
+        element.textContent = "Exercice"
+
+        console.log()
     </script>
 </body>
 
