@@ -1,4 +1,4 @@
-let codeSecret = "Charlie"; // Testez avec différentes valeurs
+let codeSecret = "Alpha"; // Testez avec différentes valeurs
 let a = "a"
 let b = "b"
 
