@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exo</title>
-    <style>
-    /*CSS si nécessaire*/
-    </style>
+    <title>Gestion des Jeux</title>
+    <script>
+
+        let nombreDeJeux = Number(prompt("Nombre de jeux en stock ?"));
+
+        if (nombreDeJeux < 0) {
+            alert("Veuillez entrer un nombre positif."); 
+        } else if (nombreDeJeux === 0) {
+            alert("Aucun jeu vidéo ajouté en stock aujourd'hui.");
+        } else {
+            let etageresComplete = Math.floor(nombreDeJeux / 10); // math.floor arrondis un nombre à l'entier inferieur le plus proche
+            let jeuxRestants = nombreDeJeux % 10;
+
+            alert("Nombre d'étagères complètes : " + etageresComplete);
+            alert("Nombre de jeux restants : " + jeuxRestants);
+        }
+    </script>
 </head>
 <body>
-    <h1>Exo</h1>
-    <script>
-        // Votre script JS ici
-    </script>
+    <h1>Bienvenue sur PixelBay</h1>
+    <p>Stock de jeux vidéo</p>
 </body>
 </html>

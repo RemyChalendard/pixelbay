@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendrier PixelBay</title>
+    <style>
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .month {
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f0f0f0;
+        }
+        .month h3 {
+            margin-top: 0;
+            color: #d9534f;
+        }
+        .month p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendrier Promotionnel PixelBay</h1>
+    <div id="calendar" class="calendar"></div>
+
+    <script>
+    let conteneur = document.getElementById("displayContainer");
+    let mois = ""; // J'ai rajouter cette partie car sinon le code marchais pas
+    let jeux = "";
+    let description ="";
+
+   games = [
+
+   {mois : "Janvier", jeux : "Zelda", description : "Sauvez la princesse Zelda",}
+
+
+   ]
+
+
+
+   
+
+    console.log(jeux);      
+    alert("Vous avez choisi : " + jeux);  
+    conteneur.textContent = jeux;
+
+    </script>
+</body>
+</html>

@@ -75,8 +75,3 @@ function resultat(jeux) {
 resultat(jeuxRetro);
 console.log(resultat(jeuxRetro))
 console.log(resultat(jeuxModerne))
-
-
-
-
-
