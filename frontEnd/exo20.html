@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Barre de Progression de Scroll chez PixelBay</title>
+    <style>
+        body {
+            height: 300vh;
+            /* Pour permettre le scroll */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: #ff0000;
+            width: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Faites défiler la page pour voir la barre de progression</h1>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.querySelector("footer");
+
+            document.addEventListener("scroll", function () { });
+        });
+
+    </script>
+</body>
+
+</html>

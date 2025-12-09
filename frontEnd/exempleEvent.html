@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            min-height: 5000px;
+        }
+
+        button {
+            position: fixed;
+            top: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Javascript Event</h1>
+
+        <p id="message">Salut !</p>
+
+        <!-- <button id="btn" onclick="sayHello()">Ouvrir la boite de dialogue</button> -->
+        <button id="btn">
+            Ouvrir la <strong>boite de <em>dialogue</em></strong>
+        </button>
+
+    </main>
+    <script>
+        const message = document.querySelector("#message");
+        console.dir(message);
+
+        message.innerHTML += " la classe";
+
+        const btn = document.querySelector("#btn")
+        console.dir(btn);
+
+        function sayHello() {
+            // alert("Hello !")
+           
+            message.innerHTML += " DWWM";
+
+        }
+
+        // btn.onclick = function () {
+        //     sayHello()
+        // }
+
+        btn.addEventListener( "mouseover", (event) => {
+            console.log(event);
+            // Element ciblé avec le curseur
+            // console.log(event.target);
+            // L'element qui porte l'evenement
+            // console.log(event.currentTarget);
+            console.log(window.scrollY);
+            
+            
+        } )
+
+        btn.addEventListener( "click", (event) => {
+            console.log(event);
+            // Element ciblé avec le curseur
+            // console.log(event.target);
+            // L'element qui porte l'evenement
+            // console.log(event.currentTarget);
+            message.style.backgroundColor= "#FF0000"
+            message.style.height= "240px"
+            document.querySelector("h1").style.display= "none"
+            
+            
+        } )
+
+    </script>
+</body>
+
+</html>
