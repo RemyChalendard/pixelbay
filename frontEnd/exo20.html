@@ -31,12 +31,9 @@
 
         window.addEventListener("scroll", function () { // Evenement qui ce declanche a chaque scroll
             let position = window.scrollY; // Le scroll prend place sur l'axe Y
-            console.log(position)
-            let hauteur = document.documentElement.scrollHeight - window.innerHeight;
-            console.log(hauteur)
-            let pourcentage = (position / hauteur) * 100; // Le scroll ne peut pas depasser 100%, cela correspond a la fin de la page
-            console.log(pourcentage)
-            barre.style.width = pourcentage + "%"; // Le pourcentage du dessus s'applique donc au footer
+            let height = document.documentElement.scrollHeight - window.innerHeight;
+            let pourcentage = (position / height) * 100; 
+            barre.style.width = pourcentage + "%"; // Le modulo fait apparaitre la barre
         })
     </script>
 </body>
