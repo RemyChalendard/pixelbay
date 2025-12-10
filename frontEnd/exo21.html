@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Simulation de Commande</title>
@@ -9,25 +10,27 @@
             font-weight: bold;
             margin-top: 20px;
         }
+
         .result.active {
             color: green;
         }
     </style>
 </head>
+
 <body>
     <h1>Calculateur de Panier PixelBay</h1>
     <form>
         <div>
             <label for="quantity">Quantité</label>
-            <input id="quantity" type="number" min="1" max="100" value="1" >
+            <input id="quantity" type="number" min="1" max="100" value="1">
         </div>
         <div>
             <label for="unitPrice">Prix Unitaire HT</label>
-            <input id="unitPrice" type="text" value="49.99" disabled >
+            <input id="unitPrice" type="text" value="49.99" disabled>
         </div>
         <div>
             <label for="tax">TVA %</label>
-            <input id="tax" type="text" value="20" disabled >
+            <input id="tax" type="text" value="20" disabled>
         </div>
         <div>
             <button type="submit">Recalculer le panier</button>
@@ -37,13 +40,17 @@
 
     <script>
         // Votre code JavaScript ici
-        const quantity = form.quantity.value;
+        const form = document.querySelector("form");
+        const result = document.querySelector(".result");
+
+        const quantity = quantity.value;
         const unitPrice = price.value;
         const tax = tax.value;
-        const result = text.content
-                cell.addEventListener("clic", function () { 
+
+        cell.addEventListener("clic", function () {
 
         })
     </script>
 </body>
+
 </html>
