@@ -22,19 +22,19 @@
     <form>
         <div>
             <label for="quantity">Quantité</label>
-            <input id="quantity" type="number" min="1" max="100" value="1" >
+            <input id="quantity" type="number" min="1"  value="1">
         </div>
         <div>
             <label for="unitPrice">Prix Unitaire HT</label>
-            <input id="unitPrice" type="text" value="49.99" disabled >
+            <input id="unitPrice" type="text" value="49.99" disabled>
         </div>
         <div>
             <label for="tax">TVA %</label>
-            <input id="tax" type="text" value="20" disabled >
+            <input id="tax" type="text" value="20" disabled>
         </div>
         <div>
-            <label for="Price">PRICE : </label>
-            <input id="Price" type="text" disabled >
+            <label for="totalPrice">PRICE : </label>
+            <input id="totalPrice" type="text" value="" disabled>
         </div>
         <div>
             <button type="submit">Recalculer le panier</button>
@@ -44,17 +44,29 @@
 
     <script>
         // Votre code JavaScript ici
-        let quantity = document.querySelector("quantity")
-        let unitPrice = document.querySelector("unitPrice")
-        let tax = document.querySelector("tax")
-        let button = document.querySelector("button")
-        let totalPrice = document.querySelector("totalPrice")
 
-        totalPrice.addEventListener("change", (event) => {
+        let form = document.querySelector("form");
+        console.log("form", form)
+        let quantity = parseFloat(document.querySelector("#quantity").value);
+        console.log("quantity", quantity)
+        let unitPrice = parseFloat(document.querySelector("#unitPrice").value);
+        console.log("unitPrice", unitPrice)
+        let tax = parseFloat(document.querySelector("#tax").value);
+        console.log("tax",tax);
+        
+        let button = document.querySelector("#button");
+        console.log("buuton", button);
+        
+        let totalPrice = document.querySelector("#totalPrice");
+        console.log("totalPrice",totalPrice)
 
+        totalPrice.value = ((( unitPrice * tax) / 100) + unitPrice)* quantity;
 
+        form.addEventListener("change", (event) => {
+            console.log(event.target.value) // event.target c'est l'element qui est manipulé
+            event.preventDefault();
+            totalPrice.value = ((( unitPrice * tax) / 100) + unitPrice)* parseInt(event.target.value);
         })
-
 
     </script>
 </body>
