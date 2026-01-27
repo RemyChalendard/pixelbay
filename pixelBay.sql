@@ -46,3 +46,5 @@ CREATE TABLE appartient(
    FOREIGN KEY(produit_id) REFERENCES produit(produit_id),
    FOREIGN KEY(categorie_id) REFERENCES categorie(categorie_id)
 );
+
+/* Note */
