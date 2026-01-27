@@ -1,0 +1,52 @@
+Sub Create_Tables()
+
+DoCmd.RunSQL "CREATE TABLE utilisateur(" & _
+   "user_id VARCHAR(50) AUTO_INCREMENT," & _
+   "name VARCHAR(50) NOT NULL," & _
+   "email VARCHAR(50) NOT NULL," & _
+   "password VARCHAR(50) NOT NULL," & _
+   "role VARCHAR(50) NOT NULL," & _
+   "PRIMARY KEY(user_id)," & _
+   "UNIQUE(email)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE commande(" & _
+   "order_id VARCHAR(50) AUTO_INCREMENT," & _
+   "order_date DATE NOT NULL," & _
+   "order_status VARCHAR(50) NOT NULL," & _
+   "user_id VARCHAR(50) NOT NULL," & _
+   "PRIMARY KEY(order_id)," & _
+   "FOREIGN KEY(user_id) REFERENCES utilisateur(user_id)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE produit(" & _
+   "produit_id VARCHAR(50) AUTO_INCREMENT," & _
+   "name VARCHAR(50) NOT NULL," & _
+   "price CURRENCY NOT NULL," & _
+   "in_stock TEXT NOT NULL," & _
+   "PRIMARY KEY(produit_id)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE categorie(" & _
+   "categorie_id VARCHAR(50) AUTO_INCREMENT," & _
+   "name VARCHAR(50) NOT NULL," & _
+   "PRIMARY KEY(categorie_id)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE contient(" & _
+   "order_id VARCHAR(50)," & _
+   "produit_id VARCHAR(50)," & _
+   "PRIMARY KEY(order_id, produit_id)," & _
+   "FOREIGN KEY(order_id) REFERENCES commande(order_id)," & _
+   "FOREIGN KEY(produit_id) REFERENCES produit(produit_id)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE appartient(" & _
+   "produit_id VARCHAR(50)," & _
+   "categorie_id VARCHAR(50)," & _
+   "PRIMARY KEY(produit_id, categorie_id)," & _
+   "FOREIGN KEY(produit_id) REFERENCES produit(produit_id)," & _
+   "FOREIGN KEY(categorie_id) REFERENCES categorie(categorie_id)" & _
+");"   
+
+End Sub
