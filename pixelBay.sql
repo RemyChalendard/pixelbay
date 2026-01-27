@@ -25,12 +25,21 @@ CREATE TABLE produit(
    PRIMARY KEY(produit_id)
 );
 
+/*Catégorie*/
 CREATE TABLE categorie(
-   categorie_id VARCHAR(50) AUTO_INCREMENT,
+   categorie_id INT AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
    PRIMARY KEY(categorie_id)
 );
 
+INSERT INTO categorie (name) VALUES
+('RPG'),
+('Aventure'),
+('FPS'),
+('Sport');
+
+
+/*Contient*/
 CREATE TABLE contient(
    order_id VARCHAR(50),
    produit_id VARCHAR(50),
@@ -46,5 +55,9 @@ CREATE TABLE appartient(
    FOREIGN KEY(produit_id) REFERENCES produit(produit_id),
    FOREIGN KEY(categorie_id) REFERENCES categorie(categorie_id)
 );
+
+CREATE TABLE orderproduit(
+   FOREIGN KEY (order_id) REFERENCES (produit_id)
+)
 
 /* Note */
