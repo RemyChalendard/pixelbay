@@ -1,3 +1,4 @@
+/*Utilisateur*/
 CREATE TABLE utilisateur(
    user_id VARCHAR(50) AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
@@ -8,6 +9,7 @@ CREATE TABLE utilisateur(
    UNIQUE(email)
 );
 
+/*Commande*/
 CREATE TABLE commande(
    order_id VARCHAR(50) AUTO_INCREMENT,
    order_date DATE NOT NULL,
@@ -17,6 +19,7 @@ CREATE TABLE commande(
    FOREIGN KEY(user_id) REFERENCES utilisateur(user_id)
 );
 
+/*Produits*/
 CREATE TABLE produit(
    produit_id VARCHAR(50) AUTO_INCREMENT,
    name VARCHAR(50) NOT NULL,
@@ -48,6 +51,7 @@ CREATE TABLE contient(
    FOREIGN KEY(produit_id) REFERENCES produit(produit_id)
 );
 
+/*Appartient*/
 CREATE TABLE appartient(
    produit_id VARCHAR(50),
    categorie_id VARCHAR(50),
@@ -56,8 +60,8 @@ CREATE TABLE appartient(
    FOREIGN KEY(categorie_id) REFERENCES categorie(categorie_id)
 );
 
+/*OrderProduits*/
 CREATE TABLE orderproduit(
    FOREIGN KEY (order_id) REFERENCES (produit_id)
 )
 
-/* Note */
