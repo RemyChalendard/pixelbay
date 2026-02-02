@@ -160,6 +160,27 @@ INNER JOIN orderproduct op ON op.order_id = c.order_id
 INNER JOIN produit p ON op.produit_id = p.produit_id;
 
 
+SELECT 
+    c.name AS categorie
+    SUM(p.prix) AS chiffre_affaires
+FROM categorie, commande, produit c
+JOIN order o  ON p.categorie_id = c.id
+JOIN order o ON o.order_id = order.id
+GROUP BY c.name
+ORDER BY chiffre_affaires DESC;
+
+SELECT c.name AS categorie,
+SUM (p.prix) AS chiffre_affaires
+FROM categorie c
+JOIN produit p ON c.categorie_id = p.categorie_id
+JOIN orderproduct op ON p.produit_id = op.produit_id
+GROUP BY categorie
+ORDER BY chiffre_affaires DESC;
+
+
+
+
+
 
 
 
