@@ -177,6 +177,25 @@ JOIN orderproduct op ON p.produit_id = op.produit_id
 GROUP BY categorie
 ORDER BY chiffre_affaires DESC;
 
+ALTER TABLE orderproduct
+DROP FOREIGN KEY orderproduct_ibfk_1;
+
+ALTER TABLE orderproduct
+ADD CONSTRAINT orderproduct_ibfk_1
+FOREIGN KEY (order_id) REFERENCES commande(order_id)
+ON DELETE CASCADE;
+
+DELETE FROM utilisateur WHERE user_id = 5;
+
+
+
+
+
+
+
+
+
+
 
 
 
